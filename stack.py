@@ -42,7 +42,7 @@ class Stack:
         """
         return True if self.first == None else False
 
-    def size(self):
+    def __len__(self):
         """
         Return how many elements there are on the stack
         """
@@ -75,6 +75,3 @@ class StackPopException(Exception):
         Return error message when pop is called and there are no items on stack
         """
         return "No item to pop from stack!"
-
-
-

@@ -43,7 +43,7 @@ class Queue:
         """
         return True if self.first == None else False
 
-    def size(self):
+    def __len__(self):
         """
         Return how many elements there are on the queue
         """
@@ -76,5 +76,3 @@ class QueueDequeueException(Exception):
         Return error message when dequeue is called and there are no items on queue
         """
         return "No item to dequeue!"
-
-

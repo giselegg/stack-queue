@@ -20,13 +20,13 @@ class StackTestCase(unittest.TestCase):
 
     def test_size(self):
         stack = Stack()
-        assert stack.size() == 0
+        assert len(stack) == 0
 
         stack.push(1)
-        assert stack.size() == 1
+        assert len(stack) == 1
 
         stack.pop()
-        assert stack.size() == 0
+        assert len(stack) == 0
 
     def test_push_items(self):
         stack = Stack()
@@ -36,7 +36,7 @@ class StackTestCase(unittest.TestCase):
         for test in tests:
             stack.push(test)
 
-        assert len(tests) == stack.size()
+        assert len(tests) == len(stack)
 
     def test_pop_items(self):
         stack = Stack()
@@ -50,12 +50,12 @@ class StackTestCase(unittest.TestCase):
         stack.push(one)
         stack.push(two)
 
-        assert stack.size() == 2
+        assert len(stack) == 2
 
         assert stack.pop() == two
         assert stack.pop() == one
 
-        assert stack.size() == 0
+        assert len(stack) == 0
 
     def test_print(self):
         stack = Stack()
@@ -83,13 +83,13 @@ class QueueTestCase(unittest.TestCase):
 
     def test_size(self):
         queue = Queue()
-        assert queue.size() == 0
+        assert len(queue) == 0
 
         queue.enqueue(1)
-        assert queue.is_empty() is False
+        assert len(queue) == 1
 
         queue.dequeue()
-        assert queue.is_empty() is True
+        assert len(queue) == 0
 
     def test_enqueue(self):
         queue = Queue()
@@ -99,7 +99,7 @@ class QueueTestCase(unittest.TestCase):
         for test in tests:
             queue.enqueue(test)
 
-        assert len(tests) == queue.size()
+        assert len(tests) == len(queue)
 
     def test_dequeue(self):
         queue = Queue()
@@ -113,12 +113,12 @@ class QueueTestCase(unittest.TestCase):
         queue.enqueue(one)
         queue.enqueue(two)
 
-        assert queue.size() == 2
+        assert len(queue) == 2
 
         assert queue.dequeue() == one
         assert queue.dequeue() == two
 
-        assert queue.size() == 0
+        assert len(queue) == 0
 
     def test_print(self):
         queue = Queue()
